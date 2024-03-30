@@ -3,11 +3,7 @@ import { Login, Home } from "./page";
 
 export const Routes = () => (
   <Switch>
-    <Route exact path="/home">
-      <Home />
-    </Route>
-    <Route exact path="/login">
-      <Login />
-    </Route>
+    <Route exact path="/login" component={Login} />
+    <Route path="/" component={Home} />
   </Switch>
 );

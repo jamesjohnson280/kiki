@@ -1,4 +1,4 @@
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Routes } from "./Routes";
 
 function App() {
@@ -6,10 +6,10 @@ function App() {
     <BrowserRouter>
       <ul>
         <li>
-          <Link to="/home">Home</Link>
+          <a href="/">home</a>
         </li>
         <li>
-          <Link to="/login"> Login </Link>
+          <a href="/login">login</a>
         </li>
       </ul>
       <Routes />
