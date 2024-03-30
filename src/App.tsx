@@ -11,6 +11,9 @@ function App() {
         <li>
           <a href="/login">login</a>
         </li>
+        <li>
+          <a href="/profile">profile</a>
+        </li>
       </ul>
       <Routes />
     </BrowserRouter>

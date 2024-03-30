@@ -1,3 +1,6 @@
-import React from "react";
-
-export const Login = () => <div>Login</div>;
+import { Login as OktaLogin } from "../../components";
+export const Login = () => (
+  <div>
+    <OktaLogin />
+  </div>
+);
