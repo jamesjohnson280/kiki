@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import OktaSignIn from "@okta/okta-signin-widget";
 import { Okta } from "../config/okta";
+import "@okta/okta-signin-widget/css/okta-sign-in.min.css";
 
-// import "@okta/okta-signin-widget/dist/css/okta-sign-in.min.css";
 // @ts-ignore
 export const OktaSignInWidget = ({ onSuccess, onError }) => {
   const widgetRef = useRef(null);
