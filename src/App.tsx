@@ -1,20 +1,10 @@
-import { BrowserRouter } from "react-router-dom";
-import { Routes } from "./Routes";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Routes } from '@/config/Routes';
 
-function App() {
+export const App = () => {
+  const router = createBrowserRouter(Routes);
   return (
-    <BrowserRouter>
-      <ul>
-        <li>
-          <a href="/">home</a>
-        </li>
-        <li>
-          <a href="/login">login</a>
-        </li>
-      </ul>
-      <Routes />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   );
-}
-
-export default App;
+};
+ 
