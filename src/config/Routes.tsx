@@ -1,3 +1,4 @@
+import { LoginCallback } from '@okta/okta-react';
 import { Home, Login } from '@/routes';
 
 export const Routes = [
@@ -8,5 +9,9 @@ export const Routes = [
   {
     path: '/login',
     element: <Login />,
+  }
+  {
+    path: '/login/callback',
+    component: {LoginCallback},
   }
 ];

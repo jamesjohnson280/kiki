@@ -1,7 +1,7 @@
 const domain = 'dev-86310623.okta.com';
 const clientId = '0oag4omgq9N6bMWRb5d7';
 
-export default {
+export const Okta = {
   oidc: {
     issuer: `https://${domain}/oauth2/default`,
     clientId: `${clientId}`,
