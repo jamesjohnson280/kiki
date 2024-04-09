@@ -9,7 +9,7 @@ export const Routes = [
   {
     path: '/login',
     element: <Login />,
-  }
+  },
   {
     path: '/login/callback',
     component: {LoginCallback},
