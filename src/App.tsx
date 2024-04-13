@@ -1,20 +1,28 @@
-import { BrowserRouter } from "react-router-dom";
-import { Routes } from "./Routes";
+import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom';
+import { Security } from '@okta/okta-react';
+import { OktaAuth, toRelativeUrl } from '@okta/okta-auth-js';
 
-function App() {
+import { Okta, Routes } from '@/config';
+
+export const App = () => {
+  const router = createBrowserRouter(Routes);
+  const oktaAuth = new OktaAuth(Okta.oidc);
+
+  const customAuthHandler = () => {
+    history.pushState({}, '', '/login');
+  };
+
+  const restoreOriginalUri = async (_oktaAuth, originalUri) => {
+    history.replaceState({}, '', toRelativeUrl(originalUri || '', window.location.origin));
+  };
+
   return (
-    <BrowserRouter>
-      <ul>
-        <li>
-          <a href="/">home</a>
-        </li>
-        <li>
-          <a href="/login">login</a>
-        </li>
-      </ul>
-      <Routes />
-    </BrowserRouter>
+    <Security
+      oktaAuth={oktaAuth}
+      onAuthRequired={customAuthHandler}
+      restoreOriginalUri={restoreOriginalUri}
+    >
+      <RouterProvider router={router} />
+    </Security>
   );
-}
-
-export default App;
+};
