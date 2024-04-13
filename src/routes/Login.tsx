@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useOktaAuth } from "@okta/okta-react";
-import { OktaWidget } from "@/components/OktaWidget";
+import { OktaWidget } from "@/components";
 
 export const Login = () => {
   const { oktaAuth, authState } = useOktaAuth();

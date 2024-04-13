@@ -1,5 +1,6 @@
 import { LoginCallback } from '@okta/okta-react';
-import { Home, Login } from '@/routes';
+import { Home, Login, Protected } from '@/routes';
+import { Secure } from '@/components';
 
 export const Routes = [
   {
@@ -12,6 +13,14 @@ export const Routes = [
   },
   {
     path: '/login/callback',
-    component: {LoginCallback},
+    element: {LoginCallback},
+  },
+  {
+    path: '/protected',
+    element: (
+      <Secure>
+        <Protected />
+      </Secure>
+    )
   }
 ];
